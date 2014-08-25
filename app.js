@@ -27,20 +27,28 @@ $('.home').click(function(){
 
 //Get top artists info
 var getTopArtists = function(topArtists, username){
-  console.log("username in getTopArtists: ",username);
-
   //getTopArtist json request with username added
   var url = 'http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=eb8e795d4ad0ecfe76dc84f885983afc&format=json';
-  console.log("url: ",url);
 
-  // $.getJSON(url, function(data){
-  //   $.each(data, function(name, playcount){
-  //     topArtists[name] = playCount;
-  //   });
-  // }, lastfm.apiKey);
+  $.getJSON(url, function(data){
+    $.each(data.topartists.artist, function(index, obj){
+      console.log("data.topartists.artist: ", data.topartists.artist);
+      console.log("index: ",index);
+      console.log("obj: ",obj);
 
-console.log("topArtists: ",topArtists);
-  // return topArtists;
+      $.each(obj, function(key, val){
+        var name = obj.name;
+        var playcount = obj.playcount;
+        // console.log("var name: ", name);
+        // console.log("var playcount: ", playcount);
+
+        topArtists[name] = playcount;
+      });
+    });
+  }, lastfm.apiKey);
+
+  console.log("topArtists: ",topArtists);
+  return topArtists;
 };
 
 $(document).ready(function(){
