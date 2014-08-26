@@ -1,13 +1,13 @@
 var svgSettings = {
-  width: 1300,
-  height: 700
+  width: 1140,
+  height: 705
 };
 
 //d3 append svg on username submission
 var svgAppend = function(topArtistsArray){
 
   var xRandom = function(){
-    var x = Math.random() * 1000;
+    var x = Math.random() * 1100;
     return x;
   };
 
@@ -30,7 +30,7 @@ var svgAppend = function(topArtistsArray){
                          .attr('cy', function(d){return yRandom();})
                          .attr('r', function(d){return (d.playcount/40);})
                          .style('opacity', .5)
-                         .style('fill', 'blue')
+                         .style('fill', '#e31b23')
                          .on('mouseenter', function(d){
                             var artistName = d.name;
                             d3.select(this).append('artistName')
@@ -54,5 +54,5 @@ var svgAppend = function(topArtistsArray){
                             .remove();
                          });
 
-  svgAppendAlbums(topAlbumsArray);
+
 };
