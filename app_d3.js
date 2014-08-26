@@ -55,4 +55,5 @@ var svgAppend = function(topArtistsArray){
                             .remove();
                          });
 
+  svgAppendAlbums(topAlbumsArray);
 };
