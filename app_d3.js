@@ -28,19 +28,19 @@ var svgAppend = function(){
             .attr('width', 800)
             .attr('height', 500)
             .style('border', '1px solid black');
+  
+  var circles = svg.selectAll("circle")
+               .data(myDataSet)
+               .enter()
+               .append("circle");
 
-  for(var key in myDataSet){
-    var circle = svg.append('circle');
+  var circleAttributes = circles
+                         .attr('cx', 25)
+                         .attr('cy', 25)
+                         .attr('r', function(d){return (d.playcount/100);})
+                         .style('opacity', .5)
+                         .style('fill', 'blue');
 
-    svg.selectAll('circle')
-        .data(myDataSet)
-        .enter()
-        .attr('cx', 25)
-        .attr('cy', 25)
-        .attr('r', 25)
-        .style('opacity', .5)
-        .style('fill', 'blue');
-  }
 };
 
 
