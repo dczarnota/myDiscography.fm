@@ -19,7 +19,6 @@ var svgAppend = function(topArtistsArray){
   var svg = d3.select('.d3-data').append('svg')
             .attr('width', svgSettings.width)
             .attr('height', svgSettings.height);
-            // .style('border', '1px solid black');
   
   var circles = svg.selectAll('circle')
                .data(topArtistsArray)
