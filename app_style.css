@@ -37,3 +37,51 @@
     .tipsy-se .tipsy-arrow { bottom: 0; right: 10px; border-top-style: solid; border-bottom: none; border-left-color: transparent; border-right-color: transparent; }
   .tipsy-e .tipsy-arrow { right: 0; top: 50%; margin-top: -5px; border-left-style: solid; border-right: none; border-top-color: transparent; border-bottom-color: transparent; }
   .tipsy-w .tipsy-arrow { left: 0; top: 50%; margin-top: -5px; border-right-style: solid; border-left: none; border-top-color: transparent; border-bottom-color: transparent; }
+
+
+/*.bar_chart {
+  fill: steelblue;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.bar_chart text {
+  fill: blue;
+}
+*/
+
+.chart {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+
+.navbar-inverse {
+  background-color: #e31b23;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e31b23, endColorstr=#b32024);
+  background-image: -webkit-linear-gradient(#e31b23, #b32024);
+  background-image:    -moz-linear-gradient(#e31b23, #b32024);
+  background-image:         linear-gradient(#e31b23, #b32024);
+  border: 1px solid #a00;
+  border-bottom: 1px solid #9f081e;
+  box-shadow: rgba(0,0,0,0.3) 0 2px 5px;
+
+  position: relative;
+  /*height: 45px;*/
+  /*padding: 10px 0 2px 34px;*/
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+
+.navbar-inverse .navbar-nav {
+  color: white;
+}
+
+body {
+  padding-top: 0px;
+}
