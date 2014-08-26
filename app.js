@@ -1,6 +1,5 @@
 var username = undefined;
 var topArtistsArray = [];
-var ready = false;
 //last.fm api key
 var lastfm = {
 
@@ -27,11 +26,16 @@ var init = function(){
 $('.home').click(function(){
   $('.usernameForm').val('');
   $('.usernameFormRow').show('slow');
+  $('svg').remove();
+  $('h2').empty().hide();
+  $('h1').show();
+  topArtistsArray = [];
+
+  return topArtistsArray;
 });
 
 //Get top artists info
 var getTopArtists = function(topArtistsArray, username, callback){
-  console.log("username in getTopArtists: ",username)
   //getTopArtist json request with username added
   var url = 'http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=eb8e795d4ad0ecfe76dc84f885983afc&format=json';
 
