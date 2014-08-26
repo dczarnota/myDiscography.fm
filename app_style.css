@@ -1,6 +1,4 @@
 .artistInfo {   
-  /*color: black;*/
-  /*font-weight: bold;   */
   position: absolute;
   width: 200px;
   padding: 10px;
@@ -39,20 +37,8 @@
   .tipsy-w .tipsy-arrow { left: 0; top: 50%; margin-top: -5px; border-right-style: solid; border-left: none; border-top-color: transparent; border-bottom-color: transparent; }
 
 
-/*.bar_chart {
-  fill: steelblue;
-  font: 10px sans-serif;
-  text-anchor: end;
-}
-
-.bar_chart text {
-  fill: blue;
-}
-*/
-
 .chart {
   font: 10px sans-serif;
-  background-color: steelblue;
   text-align: right;
   padding: 3px;
   margin: 1px;
@@ -70,8 +56,6 @@
   box-shadow: rgba(0,0,0,0.3) 0 2px 5px;
 
   position: relative;
-  /*height: 45px;*/
-  /*padding: 10px 0 2px 34px;*/
 }
 
 .navbar-inverse .navbar-brand {
