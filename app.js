@@ -1,5 +1,5 @@
 var username = '';
-var topArtists = {};
+var topArtistsArray = [];
 
 //last.fm api key
 var lastfm = {
@@ -13,7 +13,7 @@ var getUsername = function(){
     console.log("Username: ",username);
     $('.usernameFormRow').hide('slow');
     svgAppend();
-    // getTopArtists(topArtists, username);
+    getTopArtists(topArtistsArray, username);
   });
 
   return username;
@@ -33,25 +33,22 @@ var getTopArtists = function(topArtists, username){
 
   $.getJSON(url, function(data){
     $.each(data.topartists.artist, function(index, obj){
-      // console.log("data.topartists.artist: ", data.topartists.artist);
-      // console.log("index: ",index);
-      // console.log("obj: ",obj);
+      var topArtists = {};
 
       $.each(obj, function(key, val){
-        var name = JSON.stringify(obj.name);
+        var name = obj.name;
         var playcount = obj.playcount;
-        // console.log("var name: ", name);
-        // console.log("type of name: ", typeof name);
-
-        // console.log("var playcount: ", playcount);
-
-        topArtists[name] = playcount;
+        topArtists["name"] = name;
+        topArtists["playcount"] = playcount;
       });
+        topArtistsArray.push(topArtists);
     });
   }, lastfm.apiKey);
 
-  console.log("topArtists: ",topArtists);
-  return topArtists;
+
+  console.log("topArtistsArray: ",topArtistsArray);
+
+  return topArtistsArray;
 };
 
 $(document).ready(function(){
