@@ -6,3 +6,8 @@
   padding: 10px;
   background-color: black;  
 }
+
+.usernameFormRow {
+  width: 50%;
+  margin: 0 auto;
+}
