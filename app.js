@@ -13,7 +13,7 @@ var getUsername = function(){
     console.log("Username: ",username);
     $('.usernameFormRow').hide('slow');
     svgAppend();
-    getTopArtists(topArtistsArray, username);
+    // getTopArtists(topArtistsArray, username);
   });
 
   return username;
@@ -54,6 +54,6 @@ var getTopArtists = function(topArtists, username){
 $(document).ready(function(){
   //Get last.fm username
   getUsername();
-  console.log("apiKey: " +lastfm.apiKey);
+  // console.log("apiKey: " +lastfm.apiKey);
 
 });
