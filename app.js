@@ -1,19 +1,20 @@
-var username = '';
+var username = undefined;
 var topArtistsArray = [];
-
+var ready = false;
 //last.fm api key
 var lastfm = {
 
 };
 
-var getUsername = function(){
+var init = function(){
 
+  //Button click will get username
   $('button').click(function(username){
     username = $('.usernameForm').val();
-    console.log("Username: ",username);
     $('.usernameFormRow').hide('slow');
-    svgAppend();
-    // getTopArtists(topArtistsArray, username);
+
+    //send svgAppend as callback so that the getJSON request fills in the topArtistsArray with user data
+    getTopArtists(topArtistsArray, username, svgAppend);
   });
 
   return username;
@@ -26,8 +27,8 @@ $('.home').click(function(){
 });
 
 //Get top artists info
-var getTopArtists = function(topArtists, username){
-
+var getTopArtists = function(topArtistsArray, username, callback){
+  console.log("username in getTopArtists: ",username)
   //getTopArtist json request with username added
   var url = 'http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=eb8e795d4ad0ecfe76dc84f885983afc&format=json';
 
@@ -41,19 +42,17 @@ var getTopArtists = function(topArtists, username){
         topArtists["name"] = name;
         topArtists["playcount"] = playcount;
       });
-        topArtistsArray.push(topArtists);
+
+      topArtistsArray.push(topArtists);
     });
+      //callback function here will ensure that svgAppend will only run once all the data is in topArtistsArray
+      callback(topArtistsArray);
   }, lastfm.apiKey);
 
-
-  console.log("topArtistsArray: ",topArtistsArray);
-
-  return topArtistsArray;
 };
 
 $(document).ready(function(){
-  //Get last.fm username
-  getUsername();
-  // console.log("apiKey: " +lastfm.apiKey);
+  //Get last.fm username and kickoff app
+  init();
 
 });
