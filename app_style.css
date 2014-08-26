@@ -1,0 +1,8 @@
+.artistInfo {   
+  /*color: black;*/
+  /*font-weight: bold;   */
+  position: absolute;
+  width: 200px;
+  padding: 10px;
+  background-color: black;  
+}
