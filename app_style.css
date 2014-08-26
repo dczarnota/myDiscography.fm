@@ -90,3 +90,6 @@ body {
   padding: 10px;
 }
 
+.hiddenTag {
+  text-align: -webkit-center;
+}
