@@ -11,7 +11,10 @@ var init = function(){
   //Button click will get username
   $('button').click(function(username){
     username = $('.usernameForm').val();
+    $('h1').hide();
+    $('h2').show().append(username + '\'s top artists');
     $('.usernameFormRow').hide('slow');
+
 
     //send svgAppend as callback so that the getJSON request fills in the topArtistsArray with user data
     getTopArtists(topArtistsArray, username, svgAppend);
