@@ -14,6 +14,7 @@ var init = function(){
     username = $('.usernameForm').val();
     $('h1').hide();
     $('h2').show().append(username + '\'s top artists');
+    $('h3').show().append(username + '\'s top albums');
     $('.usernameFormRow').hide('slow');
 
 
@@ -29,7 +30,9 @@ $('.home').click(function(){
   $('.usernameForm').val('');
   $('.usernameFormRow').show('slow');
   $('svg').remove();
+  $('.d3-data-album').empty();
   $('h2').empty().hide();
+  $('h3').empty().hide();
   $('h1').show();
   topArtistsArray = [];
   topAlbumsArray = [];
@@ -56,30 +59,29 @@ var getTopArtists = function(topArtistsArray, username, callback1, callback2){
 
       topArtistsArray.push(topArtists);
     });
-      console.log("topArtistsArray: ",topArtistsArray);
       //callback function here will ensure that svgAppend will only run once all the data is in topArtistsArray
       callback1(topArtistsArray);
   }, lastfm.apiKey);
 
-  // $.getJSON(urlAlbum, function(data){
-  //   $.each(data.topalbums.album, function(index, obj){
-  //     var topAlbums = {};
-  //     $.each(obj, function(key, val){
-  //       var albumName = obj['name'];
-  //       var playcount = obj.playcount;
-  //       var artist = obj.artist['name'];
+  $.getJSON(urlAlbum, function(data){
+    $.each(data.topalbums.album, function(index, obj){
+      var topAlbums = {};
+      $.each(obj, function(key, val){
+        var albumName = obj['name'];
+        var playcount = obj.playcount;
+        var artist = obj.artist['name'];
 
-  //       topAlbums["name"] = albumName;
-  //       topAlbums["playcount"] = playcount;
-  //       topAlbums["artist"] = artist;
-  //     });
+        topAlbums["name"] = albumName;
+        topAlbums["playcount"] = playcount;
+        topAlbums["artist"] = artist;
+      });
 
-  //     topAlbumsArray.push(topAlbums);
-  //   });
-  //     console.log("topAlbumsArray: ",topAlbumsArray);
-  //     //callback function here will ensure that svgAppendAlbums will only run once all the data is in topAlbumsArray
-  //     callback2(topAlbumsArray);
-  // }, lastfm.apiKey);
+      topAlbumsArray.push(topAlbums);
+    });
+      console.log("topAlbumsArray: ",topAlbumsArray);
+      //callback function here will ensure that svgAppendAlbums will only run once all the data is in topAlbumsArray
+      callback2(topAlbumsArray);
+  }, lastfm.apiKey);
 
 };
 
