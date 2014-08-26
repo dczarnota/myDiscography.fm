@@ -36,10 +36,25 @@ var svgAppend = function(topArtistsArray){
                             var artistName = d.name;
                             console.log("artistName: ",artistName);
                             d3.select(this).append('artistName')
+                            .attr('class', 'addArtistName')
                             .text(artistName);
+
+                              $('svg circle').tipsy({ 
+                                gravity: 'w', 
+                                html: true, 
+                                title: function(artistName) {
+                                  var showName = $(this).find('.addArtistName').text();
+                                  console.log("tipsy showName: ",showName);
+                                  return showName; 
+                                }
+                              });
+
                          })
                          .on('mouseout', function(d){
-                            d3.select('.text').remove();
+                            // d3.select('.text').remove();
+                            d3.select(this)
+                            .select('.addArtistName')
+                            .remove();
                          });
 
 };
