@@ -1,30 +1,22 @@
-var myDataSet = {
-  "The Beatles": "2661",
-  "La Dispute": "2437",
-  "Brand New": "1932",
-  "Say Anything": "1725",
-  "Pierce the Veil": "1564"
-};
-
 var myDataSet = [
   {
-    name: "The Beatles"
+    name: "The Beatles",
     playcount: "2661"
   },
   {
-    name: "La Dispute"
+    name: "La Dispute",
     playcount: "2437"
   },
   {
-    name: "Brand New"
+    name: "Brand New",
     playcount: "1932"
   },
   {
-    name: "Say Anything"
+    name: "Say Anything",
     playcount: "1725"
   },
   {
-    name: "Pierce the Veil"
+    name: "Pierce the Veil",
     playcount: "1564"
   },
 ]
@@ -40,14 +32,14 @@ var svgAppend = function(){
   for(var key in myDataSet){
     var circle = svg.append('circle');
 
-    // svg.selectAll('circle')
-    //     .data(myDataSet, function(myDataSet.d) { console.log(d); 
-    //       return d; })
-    //     .attr('cx', 25)
-    //     .attr('cy', 25)
-    //     .attr('r', 25)
-    //     .style('opacity', .5)
-    //     .style('fill', 'blue');
+    svg.selectAll('circle')
+        .data(myDataSet)
+        .enter()
+        .attr('cx', 25)
+        .attr('cy', 25)
+        .attr('r', 25)
+        .style('opacity', .5)
+        .style('fill', 'blue');
   }
 };
 
