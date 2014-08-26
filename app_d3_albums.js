@@ -1,0 +1,5 @@
+var svgAppendAlbums = function(topAlbumsArray){
+
+
+
+};
