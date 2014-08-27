@@ -7,7 +7,7 @@ var svgSettings = {
 var svgAppend = function(topArtistsArray){
 
   var xRandom = function(){
-    var x = Math.random() * 1100;
+    var x = Math.random() * 1000;
     return x;
   };
 
