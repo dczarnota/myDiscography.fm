@@ -78,7 +78,6 @@ var getTopArtists = function(topArtistsArray, username, callback1, callback2){
 
       topAlbumsArray.push(topAlbums);
     });
-      console.log("topAlbumsArray: ",topAlbumsArray);
       //callback function here will ensure that svgAppendAlbums will only run once all the data is in topAlbumsArray
       callback2(topAlbumsArray);
   }, lastfm.apiKey);
