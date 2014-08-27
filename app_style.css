@@ -38,7 +38,8 @@
 
 
 .chart {
-  font: 10px sans-serif;
+  font-size: 13px;
+  font-weight: 200;
   text-align: right;
   padding: 3px;
   margin: 1px;
@@ -88,4 +89,8 @@ h2 {
 
 h3 {
   font-weight: 200;
+}
+
+.home {
+  font-weight: 300;
 }
