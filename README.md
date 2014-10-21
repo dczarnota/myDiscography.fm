@@ -19,7 +19,7 @@
   > "Transform your music habits into art"
 
 ## How to Get Started ##
-  > Enter your username and enjoy.
+  > Enter your username and enjoy. Note that an API key for last.fm is needed to use the app. Email me at dczarno@gmail.com for more information.
   
 ## Conclusion ##
   > Enter your username here to get started.
