@@ -4,7 +4,8 @@ var topAlbumsArray = [];
 
 //last.fm api key
 var lastfm = {
-
+  //enter api key info here
+  //enter secret info here
 };
 
 var init = function(){
